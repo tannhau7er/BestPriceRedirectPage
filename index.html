@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Перенаправление в магазин...</title>
+    <script>
+        window.onload = function() {
+            const userAgent = navigator.userAgent.toLowerCase();
+          
+            const chromeStore = "https://chromewebstore.google.com/detail/afjklofdihcdbbbmppgbigjmkclglcbc?utm_source=item-share-cb";
+            const firefoxStore = "https://mozilla.org";
+            const operaStore = "https://opera.com";
+            
+            if (userAgent.includes("opr/") || userAgent.includes("opera")) {
+                window.location.href = operaStore;
+            } else if (userAgent.includes("firefox") || userAgent.includes("fxios")) {
+                window.location.href = firefoxStore;
+            } else {
+                window.location.href = chromeStore;
+            }
+        };
+    </script>
+</head>
+<body>
+    <p style="text-align: center; margin-top: 50px; font-family: sans-serif;">
+        Перенаправляем в магазин расширений...
+    </p>
+</body>
+</html>
